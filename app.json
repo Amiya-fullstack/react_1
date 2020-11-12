@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "DoneWithIt123",
+    "slug": "donewithit123",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./app/assets/icon.png",
+    "splash": {
+      "image": "./app/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "This is for experimental purposes  "
+  }
+}
