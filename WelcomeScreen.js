@@ -1,12 +1,13 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { render } from 'react-dom';
-import {ImageBackground,StyleSheet,View,Image,Text,Button} from 'react-native';
+import {ImageBackground,StyleSheet,View,Image,Text,Button, SafeAreaView} from 'react-native';
 import { NavigationActions, NavigationEvents } from 'react-navigation';
 import ViewImageScreen from './ViewImageScreen';
 
 const WelcomeScreen = ({navigation}) => {
     return (
+        
         <ImageBackground 
         style = {styles.background}
         source={require('../assets/background.jpg')}>
@@ -23,16 +24,17 @@ const WelcomeScreen = ({navigation}) => {
             </View>
             <Button
             onPress={()=>  navigation.navigate('View')}
-            style={styles.loginButton}
+            style={styles.viewButton}
             title="View"
-            >
-
-            </Button>
-            <View
-            //style={styles.registerButton}
-            >
-
-            </View>
+            />
+            <Button 
+            title="login"
+            style={stlyles2.loginButton}
+            />
+            <Button 
+            title="new register"
+            style={stlyles2.registerButton}
+            />
 
         </ImageBackground>
     );
@@ -43,21 +45,18 @@ const WelcomeScreen = ({navigation}) => {
      background:{
      flex: 1,
      flexDirection: "row",
-     justifyContent: "center",
-     alignItems: "center",
+     justifyContent:"space-evenly",
+     alignItems : "center",
+     
      },
-     loginButton : {
-         height: 70,
-         width: '100%',
+     viewButton : {
+         height: 20,
+         width: 20,
          backgroundColor : '#fc5c65',
-         //justifyContent: "flex-end",
+         alignItems : "center",
+         flexDirection :"column",
+         color:"yellow",
 
-     },
-     registerButton : {
-         height: 70,
-         width: '100%',
-         backgroundColor : '#4ecdc4',
-         //justifyContent: "flex-end",
 
      },
      logo : {
@@ -67,19 +66,28 @@ const WelcomeScreen = ({navigation}) => {
          top: 50,
 
      },
-     logo : {
-         height: 100,
-         width: 100,
-         position: "absolute",
-         top: 30,
-         left: 30,
-         
-        },
     logocontainer : {
         position: "absolute",
-        top: 50,
+        top: 30,
+        left: 120,
         alignItems: "center",
         },
+    
  })
-
+const stlyles2 = StyleSheet.create({
+    loginButton : {
+        position: "relative",
+        justifyContent:"space-evenly",
+        height: 50 ,
+        width: 50,
+        bottom:10,
+        },
+    registerButton : {
+        position: "relative",
+        justifyContent:"space-evenly",
+        height: 50 ,
+        width: 50,
+        bottom:10,
+        },
+})
 export default WelcomeScreen;
